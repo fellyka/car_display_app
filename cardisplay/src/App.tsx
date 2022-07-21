@@ -1,11 +1,15 @@
 import React, { FunctionComponent, useState } from 'react';
-import logo from './logo.svg';
+import  Car from './models/car';
+import mockCar from "./models/mock-car";
 import './App.css';
 
 const App: FunctionComponent = () =>{
-    const [name,setName] = useState<string>('React JS')
+    const [cars] = useState<Car[]>(mockCar);
     return(
-        <h1>Hello, {name} !</h1>
+        <React.Fragment>
+            <h1>Car display</h1>
+            <p>We've {cars.length} cars to display</p>
+        </React.Fragment>
     )
 }
 export default App;
